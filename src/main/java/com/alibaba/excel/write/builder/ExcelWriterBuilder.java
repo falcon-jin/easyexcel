@@ -10,7 +10,7 @@ import com.alibaba.excel.write.handler.WriteHandler;
 import com.alibaba.excel.write.metadata.WriteWorkbook;
 
 /**
- * Build ExcelBuilder
+ * excel写构建器
  *
  * @author Jiaju Zhuang
  */
@@ -25,7 +25,7 @@ public class ExcelWriterBuilder extends AbstractExcelWriterParameterBuilder<Exce
     }
 
     /**
-     * Default true
+     * 默认自动关闭流
      *
      * @param autoCloseStream
      * @return
@@ -36,11 +36,11 @@ public class ExcelWriterBuilder extends AbstractExcelWriterParameterBuilder<Exce
     }
 
     /**
-     * Whether the encryption.
-     * <p>
-     * WARRING:Encryption is when the entire file is read into memory, so it is very memory intensive.
+     * 是否加密。
      *
-     * @param password
+     * 警告：加密是将整个文件读入内存，因此非常占用内存。
+     *
+     * @param password 密码
      * @return
      */
     public ExcelWriterBuilder password(String password) {
@@ -49,9 +49,9 @@ public class ExcelWriterBuilder extends AbstractExcelWriterParameterBuilder<Exce
     }
 
     /**
-     * Write excel in memory. Default false,the cache file is created and finally written to excel.
+     * 在内存中写excel。默认false，缓存文件被创建并最终写入excel。
      * <p>
-     * Comment and RichTextString are only supported in memory mode.
+     * Comment 和 RichTextString 仅在内存模式下受支持。
      */
     public ExcelWriterBuilder inMemory(Boolean inMemory) {
         writeWorkbook.setInMemory(inMemory);
@@ -59,7 +59,7 @@ public class ExcelWriterBuilder extends AbstractExcelWriterParameterBuilder<Exce
     }
 
     /**
-     * Excel is also written in the event of an exception being thrown.The default false.
+     * Excel也会在抛出异常的情况下写入。默认为false。
      */
     public ExcelWriterBuilder writeExcelOnException(Boolean writeExcelOnException) {
         writeWorkbook.setWriteExcelOnException(writeExcelOnException);
@@ -67,14 +67,12 @@ public class ExcelWriterBuilder extends AbstractExcelWriterParameterBuilder<Exce
     }
 
     /**
-     * The default is all excel objects.if true , you can use {@link com.alibaba.excel.annotation.ExcelIgnore} ignore a
-     * field. if false , you must use {@link com.alibaba.excel.annotation.ExcelProperty} to use a filed.
-     * <p>
-     * Default true
-     *
+     * 默认 true
+     * true: 将传入的excel数据类对象所有字段(没有加{@link com.alibaba.excel.annotation.ExcelIgnore}注解的)都导出
+     * false： 只导出加了 {@link com.alibaba.excel.annotation.ExcelProperty}注解的字段
      * @param convertAllFiled
      * @return
-     * @deprecated Just to be compatible with historical data, The default is always going to be convert all filed.
+     * @deprecated 只是为了与历史数据兼容，默认总是要转换所有文件。
      */
     @Deprecated
     public ExcelWriterBuilder convertAllFiled(Boolean convertAllFiled) {
@@ -116,7 +114,7 @@ public class ExcelWriterBuilder extends AbstractExcelWriterParameterBuilder<Exce
     }
 
     /**
-     * Write handler
+     * 写处理程序
      *
      * @deprecated please use {@link WriteHandler}
      */

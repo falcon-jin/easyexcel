@@ -7,7 +7,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Ignore convert excel
+ * 忽略转换excel
  *
  * @author Jiaju Zhuang
  */

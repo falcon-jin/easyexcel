@@ -7,12 +7,10 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Convert date format.
+ * 转换日期格式。
  *
- * <p>
- * write: It can be used on classes {@link java.util.Date}
- * <p>
- * read: It can be used on classes {@link String}
+ *  读：可以加在java.util.Date类型的字段上
+ * 写: 可以加在String类型的字段上
  *
  * @author Jiaju Zhuang
  */
@@ -23,16 +21,16 @@ public @interface DateTimeFormat {
 
     /**
      *
-     * Specific format reference {@link java.text.SimpleDateFormat}
+     * 具体格式参考 {@link java.text.SimpleDateFormat}
      *
-     * @return Format pattern
+     * @return 格式模式
      */
     String value() default "";
 
     /**
-     * True if date uses 1904 windowing, or false if using 1900 date windowing.
+     * 如果日期使用 1904 年窗口，则为 true，如果使用 1900 日期窗口，则为 false。
      *
-     * @return True if date uses 1904 windowing, or false if using 1900 date windowing.
+     * @return 如果日期使用 1904 年窗口，则为 true，如果使用 1900 日期窗口，则为 false。
      */
     boolean use1904windowing() default false;
 }

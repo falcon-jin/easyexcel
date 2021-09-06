@@ -22,7 +22,7 @@ import com.alibaba.excel.read.metadata.ReadWorkbook;
 import com.alibaba.excel.support.ExcelTypeEnum;
 
 /**
- * Excel readers are all read in event mode.
+ * Excel阅读器都是在事件模式下读取的.
  *
  * @author jipengfei
  */
@@ -30,7 +30,7 @@ public class ExcelReader {
     private static final Logger LOGGER = LoggerFactory.getLogger(ExcelReader.class);
 
     /**
-     * Analyser
+     * 解析器
      */
     private ExcelAnalyser excelAnalyser;
 

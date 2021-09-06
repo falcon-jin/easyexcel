@@ -8,14 +8,14 @@ import com.alibaba.excel.write.handler.WriteHandler;
 import com.alibaba.excel.write.metadata.WriteBasicParameter;
 
 /**
- * Build ExcelBuilder
+ * excel写构建器抽象父类
  *
  * @author Jiaju Zhuang
  */
 public abstract class AbstractExcelWriterParameterBuilder<T extends AbstractExcelWriterParameterBuilder,
     C extends WriteBasicParameter> extends AbstractParameterBuilder<T, C> {
     /**
-     * Writes the head relative to the existing contents of the sheet. Indexes are zero-based.
+     * 相对于工作表的现有内容写入头部。索引从零开始。
      *
      * @param relativeHeadRowIndex
      * @return
@@ -26,7 +26,7 @@ public abstract class AbstractExcelWriterParameterBuilder<T extends AbstractExce
     }
 
     /**
-     * Need Head
+     * 需要头
      */
     public T needHead(Boolean needHead) {
         parameter().setNeedHead(needHead);
@@ -34,7 +34,7 @@ public abstract class AbstractExcelWriterParameterBuilder<T extends AbstractExce
     }
 
     /**
-     * Custom write handler
+     * 自定义写入处理程序
      *
      * @param writeHandler
      * @return
@@ -48,7 +48,7 @@ public abstract class AbstractExcelWriterParameterBuilder<T extends AbstractExce
     }
 
     /**
-     * Use the default style.Default is true.
+     * 使用默认样式。默认为true。
      *
      * @param useDefaultStyle
      * @return
@@ -59,7 +59,7 @@ public abstract class AbstractExcelWriterParameterBuilder<T extends AbstractExce
     }
 
     /**
-     * Whether to automatically merge headers.Default is true.
+     * 是否自动合并headers。默认为true。
      *
      * @param automaticMergeHead
      * @return
@@ -70,7 +70,7 @@ public abstract class AbstractExcelWriterParameterBuilder<T extends AbstractExce
     }
 
     /**
-     * Ignore the custom columns.
+     * 忽略自定义列。
      */
     public T excludeColumnIndexes(Collection<Integer> excludeColumnIndexes) {
         parameter().setExcludeColumnIndexes(excludeColumnIndexes);
@@ -78,7 +78,7 @@ public abstract class AbstractExcelWriterParameterBuilder<T extends AbstractExce
     }
 
     /**
-     * Ignore the custom columns.
+     * 忽略自定义列。
      */
     public T excludeColumnFiledNames(Collection<String> excludeColumnFiledNames) {
         parameter().setExcludeColumnFiledNames(excludeColumnFiledNames);
@@ -86,7 +86,7 @@ public abstract class AbstractExcelWriterParameterBuilder<T extends AbstractExce
     }
 
     /**
-     * Only output the custom columns.
+     * 只输出自定义列。
      */
     public T includeColumnIndexes(Collection<Integer> includeColumnIndexes) {
         parameter().setIncludeColumnIndexes(includeColumnIndexes);
@@ -94,7 +94,7 @@ public abstract class AbstractExcelWriterParameterBuilder<T extends AbstractExce
     }
 
     /**
-     * Only output the custom columns.
+     * 只输出自定义列。
      */
     public T includeColumnFiledNames(Collection<String> includeColumnFiledNames) {
         parameter().setIncludeColumnFiledNames(includeColumnFiledNames);

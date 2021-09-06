@@ -8,12 +8,12 @@ import java.lang.annotation.Target;
 import java.math.RoundingMode;
 
 /**
- * Convert number format.
+ * 转换数字格式。
  *
  * <p>
- * write: It can be used on classes that inherit {@link Number}
+ * 写: 它可以用于继承的类 {@link Number}
  * <p>
- * read: It can be used on classes {@link String}
+ * 读: 可用于类{@link String}
  *
  * @author Jiaju Zhuang
  */
@@ -24,16 +24,16 @@ public @interface NumberFormat {
 
     /**
      *
-     * Specific format reference {@link java.text.DecimalFormat}
+     * 具体格式参考{@link java.text.DecimalFormat}
      *
-     * @return Format pattern
+     * @return 格式模式
      */
     String value() default "";
 
     /**
-     * Rounded by default
+     * 默认四舍五入
      *
-     * @return RoundingMode
+     * @return 舍入模式
      */
     RoundingMode roundingMode() default RoundingMode.HALF_UP;
 }
